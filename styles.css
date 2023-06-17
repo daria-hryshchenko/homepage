@@ -178,11 +178,87 @@ ul {
   margin-bottom: 15px;
 }
 
+.skills__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.skills__list li {
+  margin: 5px 0;
+  padding: 5px;
+}
+
 .skills__text {
   color: var(--secondary-text-color);
   text-align: justify;
+  margin-bottom: 5px;
 }
 
+.skills__bar {
+  background: transparent;
+  display: block;
+  height: 20px;
+  width: 90%;
+  border: 1px solid var(--text-decoration-color);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.bar {
+  height: 20px;
+  float: left;
+  background: linear-gradient(
+    135deg,
+    var(--text-decoration-color) 0%,
+    rgba(252, 103, 103, 1) 100%
+  );
+}
+
+.skills__eighty {
+  width: 85%;
+  animation: eighty 3s;
+}
+
+@keyframes eighty {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 85%;
+  }
+}
+
+.skills__seventeen {
+  width: 75%;
+  animation: seventeen 3s;
+}
+
+@keyframes seventeen {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 75%;
+  }
+}
+
+.skills__ninety {
+  width: 95%;
+  animation: ninety 3s;
+}
+
+@keyframes ninety {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 95%;
+  }
+}
 /* Experience and additional info styles */
 
 .experiences {
