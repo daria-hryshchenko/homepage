@@ -18,6 +18,10 @@ body {
   --text-decoration-color: #ff9a00;
 }
 
+ul {
+  list-style: none;
+}
+
 .container {
   margin: 0 auto;
   padding: 0 30px;
@@ -132,6 +136,12 @@ body {
   object-fit: cover;
   border: 3px solid;
   border-color: var(--text-decoration-color);
+}
+
+.contact-info__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 /* Intro and skills styles */
