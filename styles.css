@@ -317,6 +317,11 @@ ul {
     padding-left: 20px;
 }
 
+.additional{
+    flex: 1 1 60%;
+    margin-right: 50px;
+}
+
 .additional-info {
     flex: 1 1 40%;
 }
@@ -440,4 +445,36 @@ ul {
 .show-me:nth-child(n){
     transform: none;
     opacity: 1;
+}
+
+.additional{
+    display: flex;
+}
+
+.additional__column {
+    flex: 1;
+    padding: 20px;
+    margin: 10px;
+  }
+
+.additional__list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.additional__item span{
+    color: var(--durability-text-color);
+    text-align: left;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.additional__item p{
+    color: var(--primary-text-color);
+    text-align: left;
+}
+
+.additional__item h3{
+    color: var(--secondary-text-color);
 }
