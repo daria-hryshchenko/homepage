@@ -19,7 +19,7 @@
 //     up = scrollY < prevScrollY;
 //     down = !up;
 //     const timelineRect = timeline.getBoundingClientRect();
-//     const lineRect = line.getBoundingClientRect(); 
+//     const lineRect = line.getBoundingClientRect();
 
 //     const dist = targetY - timelineRect.top
 //     console.log(dist);
@@ -49,7 +49,6 @@
 // line.style.display = 'block';
 // window.addEventListener('scroll', scrollHandler)
 
-
 // Active mobile menu
 
 // const mobileMenu = document.querySelector('#mobile__menu');
@@ -70,84 +69,96 @@
 //   }
 // };
 
-
 /*==================== MENU SHOW Y HIDDEN ====================*/
-const navMenu = document.getElementById('nav-menu')
-const navToggle = document.getElementById('nav-toggle');
-const navClose = document.getElementById('nav-close');
+const navMenu = document.getElementById("nav-menu");
+const navToggle = document.getElementById("nav-toggle");
+const navClose = document.getElementById("nav-close");
 
 /*===== MENU SHOW =====*/
 if (navToggle) {
-  navToggle.addEventListener('click', () => {
-    navMenu.classList.add('show-menu');
-  })
+  navToggle.addEventListener("click", () => {
+    navMenu.classList.add("show-menu");
+  });
 }
-
 
 /*===== MENU HIDDEN =====*/
 if (navClose) {
-  navClose.addEventListener('click', () => {
-    navMenu.classList.remove('show-menu');
-  })
+  navClose.addEventListener("click", () => {
+    navMenu.classList.remove("show-menu");
+  });
 }
-
 
 /*==================== REMOVE MENU MOBILE ====================*/
-const navLink = document.querySelectorAll('.nav__link');
+const navLink = document.querySelectorAll(".nav__link");
 
 function linkAction() {
-  const navMenu = document.getElementById('nav-menu');
-  navMenu.classList.remove('show-menu');
+  const navMenu = document.getElementById("nav-menu");
+  navMenu.classList.remove("show-menu");
 }
 
-navLink.forEach(item => item.addEventListener('click', linkAction))
+navLink.forEach((item) => item.addEventListener("click", linkAction));
 
 /*==================== ACCORDION SKILLS ====================*/
 
-const skillsContent = document.getElementsByClassName('skills__content'),
-  skillsHeader = document.querySelectorAll('.skills__header')
+const skillsContent = document.getElementsByClassName("skills__content"),
+  skillsHeader = document.querySelectorAll(".skills__header");
 
-function toggleSkills(){
-    let itemClass = this.parentNode.className
+function toggleSkills() {
+  let itemClass = this.parentNode.className;
 
-    for(i = 0; i < skillsContent.length; i++){
-      skillsContent[i].className = 'skills__content skills__close';
-
-    }
-    if(itemClass == 'skills__content skills__close'){
-      this.parentNode.className = 'skills__content skills__open ';
-    }
+  for (i = 0; i < skillsContent.length; i++) {
+    skillsContent[i].className = "skills__content skills__close";
+  }
+  if (itemClass == "skills__content skills__close") {
+    this.parentNode.className = "skills__content skills__open ";
+  }
 }
 
 skillsHeader.forEach((el) => {
-    el.addEventListener('click', toggleSkills)
-})
-
-
-
-
-
-
+  el.addEventListener("click", toggleSkills);
+});
 
 /*==================== QUALIFICATION TABS ====================*/
+const tabs = document.querySelectorAll("[data-target]"),
+  tabContents = document.querySelectorAll("[data-content]");
 
+tabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    const target = document.querySelector(tab.dataset.target);
 
-/*==================== SERVICES MODAL ====================*/
+    tabContents.forEach((tabContent) => {
+      tabContent.classList.remove("qualification__active");
+    });
+    target.classList.add("qualification__active");
 
+    tabs.forEach((tab) => {
+      tab.classList.remove("qualification__active");
+    });
+    tab.classList.add("qualification__active");
+  });
+});
 
 /*==================== PORTFOLIO SWIPER  ====================*/
+let swiperPortfolio = new Swiper(".portfolio__container", {
+  cssMode: true,
+  loop: true,
 
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});
 
 /*==================== TESTIMONIAL ====================*/
 
-
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 
+/*==================== CHANGE BACKGROUND HEADER ====================*/
 
-/*==================== CHANGE BACKGROUND HEADER ====================*/ 
+/*==================== SHOW SCROLL UP ====================*/
 
-
-/*==================== SHOW SCROLL UP ====================*/ 
-
-
-/*==================== DARK LIGHT THEME ====================*/ 
+/*==================== DARK LIGHT THEME ====================*/
